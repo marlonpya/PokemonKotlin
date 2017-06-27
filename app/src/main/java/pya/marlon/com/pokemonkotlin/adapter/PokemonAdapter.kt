@@ -27,11 +27,6 @@ class PokemonAdapter(context: Context): RecyclerView.Adapter<PokemonAdapter.View
         notifyDataSetChanged()
     }
 
-    fun ad(pokemon: Pokemon) {
-        this.pokemons!!.add(pokemon)
-        notifyDataSetChanged()
-    }
-
     override fun getItemCount(): Int {
         return pokemons!!.size
     }
@@ -48,7 +43,7 @@ class PokemonAdapter(context: Context): RecyclerView.Adapter<PokemonAdapter.View
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(pokemon: Pokemon) {
             with(pokemon){
-                itemView.lblName.text = pokemon.name
+                itemView.lblName.text = "${pokemon.id} ${pokemon.name}"
                 itemView.ivPokemon.load("http://pokeapi.co/media/sprites/pokemon/" + pokemon.id + ".png")
             }
         }

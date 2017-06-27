@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
     fun load() {
         enable(false)
-        RetrofitSession().getPokemons(20, offset)
+        RetrofitSession.getPokemons(20, offset)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

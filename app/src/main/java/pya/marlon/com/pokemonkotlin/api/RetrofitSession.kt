@@ -13,7 +13,7 @@ import rx.Observable
  * Created by marlonpya on 24/06/17.
  */
 
-class RetrofitSession{
+object RetrofitSession{
     val service: RetrofitService
 
     init {
